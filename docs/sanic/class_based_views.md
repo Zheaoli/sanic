@@ -48,24 +48,6 @@ app.add_route(SimpleView.as_view(), '/')
 
 ```
 
-You can also use `async` syntax.
-
-```python
-from sanic import Sanic
-from sanic.views import HTTPMethodView
-from sanic.response import text
-
-app = Sanic('some_name')
-
-class SimpleAsyncView(HTTPMethodView):
-
-  async def get(self, request):
-      return text('I am async get method')
-
-app.add_route(SimpleAsyncView.as_view(), '/')
-
-```
-
 ## URL parameters
 
 If you need any URL parameters, as discussed in the routing guide, include them
@@ -146,4 +128,4 @@ view.add(['POST', 'PUT'], lambda request: text('I am a post/put method'))
 app.add_route(view, '/')
 ```
 
-Note: currently you cannot build a URL for a CompositionView using `url_for`.
+Note: currently you cannot build a URL for a CompositionView using `url_for`. 
